@@ -2,7 +2,7 @@ import numpy as np
 from time import time
 ti = time()
 
-n = 100000
+n = 1000
 
 result = np.sum(np.arange(0,n,3)) \
 	   + np.sum(np.arange(0,n,5)) \
