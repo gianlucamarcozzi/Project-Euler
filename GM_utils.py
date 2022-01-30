@@ -1,4 +1,4 @@
-def fibonacci(n):
+def GM_fibo(n):
     """
     Value of the n-th term in the Fibonacci sequence.
     Fibonacci sequence is defined as:
@@ -19,7 +19,7 @@ def fibonacci(n):
 
     return fibonacci(n-1) + fibonacci(n-2) 
 
-def fibonacci_index(value):
+def GM_fibo_index(value):
     """
     @param float value:
 
@@ -31,3 +31,35 @@ def fibonacci_index(value):
     return n
 
 
+def GM_is_palindrome(n):
+    """
+    @param int n
+    @return bool
+    """
+    digits = [x for x in str(n)]
+    for i in range(len(digits)//2):
+        if digits[i] != digits[-i - 1]:
+            return False
+    return True
+
+
+def GM_factorize(N):
+    p_fact = {}
+    for i in range(2, N):
+        while not N % i:
+            if p_fact[i] == None:
+                p_fact[i] = 1
+            else:
+                p_fact[i] += 1
+            N /= i
+        if N == 1:
+            return p_fact
+    return -1
+
+def GM_dividends(N):
+    d = []
+    for i in range(1, N//2 + 1):
+        if not N % i:
+            d.append(i)
+    d.append(N)
+    return d
